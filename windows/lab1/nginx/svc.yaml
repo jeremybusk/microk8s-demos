@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+#   annotations:
+#     service.beta.kubernetes.io/azure-load-balancer-internal: "true"  # use with type:Loadbalancer
+spec:
+  # type: NodePort
+  # type: Loadbalancer
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+    # nodePort: 32556
+    # protocol: TCP
+  selector:
+    app: nginx

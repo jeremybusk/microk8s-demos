@@ -1,0 +1,10 @@
+controller:
+  dnsPolicy: ClusterFirstWithHostNet
+  containerPort:
+    http: 80
+    https: 443
+    stat: 1024
+  daemonset:
+    useHostNetwork: true
+  service:
+    enabled: false
